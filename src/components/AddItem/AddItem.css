@@ -1,0 +1,70 @@
+/* .addItem{
+    display: flex;
+    width:370px;
+    margin:auto;
+    background-color: rgb(148, 148, 148);
+    border:1px solid rgb(121, 29, 29);
+    box-shadow:0 3px 3px rgb(19, 18, 18);
+    padding:16px;
+} */
+.add-div{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.item-desc1{
+    justify-content: flex-start;
+    flex: 3;
+}
+.item-desc1 p{
+    color: rgb(0, 0, 0);
+}
+#msg{
+    color:red
+}
+
+.button-add{
+ margin-left: 60px;
+}
+.login-button{
+    border: 1px solid transparent;
+    border-radius: 50%;
+    line-height: 1.42857143; 
+    text-align: center;
+    vertical-align: middle;
+    width: 28px;
+    height: 28px;
+    background-size: cover!important;
+    background: url(../../img/login.png) no-repeat;
+    cursor: pointer;
+    margin-left: 60px;;
+}
+.login-button:hover{
+    
+    width: 29px;
+    height: 29px;
+}
+.lock-login{
+    border: 1px solid transparent;
+    border-radius: 50%;
+    line-height: 1.42857143; 
+    text-align: center;
+    vertical-align: middle;
+    width: 28px;
+    height: 28px;
+    background-size: cover!important;
+    background: url(../../img/lock.png) no-repeat;
+    
+}
+.Input {
+   
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: white;
+    font: inherit;
+    padding: 6px 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+ }

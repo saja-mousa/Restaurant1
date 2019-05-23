@@ -1,0 +1,346 @@
+webpackHotUpdate("main",{
+
+/***/ "./src/App.js":
+/*!********************!*\
+  !*** ./src/App.js ***!
+  \********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var D_fullStack_ReactjsCourse_restaurant_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectSpread */ "./node_modules/@babel/runtime/helpers/esm/objectSpread.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Menu_Menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Menu/Menu */ "./src/components/Menu/Menu.js");
+/* harmony import */ var _components_Bill_Bill__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Bill/Bill */ "./src/components/Bill/Bill.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+
+var _jsxFileName = "D:\\fullStack\\ReactjsCourse\\restaurant\\src\\App.js";
+
+
+
+
+
+
+class App extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      menu: [],
+      onBill: [],
+      total: [],
+      String: [],
+      totalPrice: null
+    };
+
+    this.handleCheck = indexToDeleted => {
+      let totalPrice1 = 0;
+      const currentData = [...this.state.menu]; ////////// delet selected item////////
+
+      const addedObject = currentData.splice(indexToDeleted, 1); //////////onBill array//////
+
+      this.state.onBill.push(addedObject); ///////total price/////////
+
+      this.state.total.push(addedObject[0].itemPrice);
+      console.log('[app.js] total:', this.state.total);
+      this.setState({
+        menu: currentData
+      });
+      console.log('[app.js] onbill:', this.state.onBill); ///////// added price and sumation the total price
+
+      this.state.total.map(price => {
+        totalPrice1 = totalPrice1 + price;
+        console.log('totalPrice', totalPrice1);
+        this.setState({
+          totalPrice: totalPrice1
+        });
+        console.log('this.state.totalPrice', this.state.totalPrice);
+      });
+      return document.getElementById('price').innerHTML = totalPrice1;
+    };
+
+    this.postData = () => {
+      let data = null;
+      let myJsonString = null;
+      console.log('[app.js] onbill', this.state.onBill);
+      this.state.onBill.map((item, index) => {
+        console.log('[app.js] item', item);
+        data = {
+          orderUserName: "saja",
+          orderItemId: item[0].itemId,
+          orderPrice: item[0].itemPrice
+        };
+        this.state.String.push(data); //console.log('String',String)
+
+        myJsonString = JSON.stringify(data);
+      }); // console.log('data',data)
+
+      console.log('myJsonString', myJsonString);
+      axios__WEBPACK_IMPORTED_MODULE_5___default.a.post('http://94.127.209.194:3333/AudioGramServices/webapi/myresource/post', myJsonString).then(response => {
+        console.log('response', response);
+      }).catch(error => {
+        console.log(error);
+      });
+    };
+  }
+
+  componentDidMount() {
+    axios__WEBPACK_IMPORTED_MODULE_5___default.a.get('http://94.127.209.194:3333/AudioGramServices/webapi/myresource/menu').then(response => {
+      const items = response.data;
+      const updateItem = items.map(item => {
+        //  console.log(item)
+        return Object(D_fullStack_ReactjsCourse_restaurant_node_modules_babel_runtime_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, item);
+      });
+      this.setState({
+        menu: updateItem
+      });
+    });
+  }
+
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "App",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 95
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
+      className: "App-header1",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 97
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "overlay",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 98
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 99
+      },
+      __self: this
+    }, "  Order food online "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+      className: "App-link",
+      href: "https://reactjs.org",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 100
+      },
+      __self: this
+    }, "Learn React"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", {
+      className: "flex-container",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 112
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
+      className: "Menu",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 113
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 114
+      },
+      __self: this
+    }, "  Restaurant Menu"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 116
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 117
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 118
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 119
+      },
+      __self: this
+    }, "choose"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 120
+      },
+      __self: this
+    }, "  kind"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 121
+      },
+      __self: this
+    }, " price"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 122
+      },
+      __self: this
+    }, " image ")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Menu_Menu__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      menu: this.state.menu,
+      handleCheck: this.handleCheck,
+      defaultChecked: this.state.checked,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 126
+      },
+      __self: this
+    })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "bill",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 133
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 134
+      },
+      __self: this
+    }, "  Restaurant bill"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 135
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 136
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 137
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 138
+      },
+      __self: this
+    }, " kind"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 139
+      },
+      __self: this
+    }, " price "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 140
+      },
+      __self: this
+    }, " image ")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Bill_Bill__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      key: this.state.menu.itemId,
+      total: this.state.total,
+      onBill: this.state.onBill,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 145
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 147
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", {
+      className: "totalPrice",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 148
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 149
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 150
+      },
+      __self: this
+    }, " Totul price"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      id: "price",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 151
+      },
+      __self: this
+    }, "   ")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 156
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", {
+      className: "totalPrice",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 157
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 159
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      className: "postData",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 160
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      onClick: this.postData,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 161
+      },
+      __self: this
+    }, "post Data"))))))));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ })
+
+})
+//# sourceMappingURL=main.c06a395a33aea209ed87.hot-update.js.map

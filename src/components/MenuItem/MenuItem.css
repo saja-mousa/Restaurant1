@@ -1,0 +1,86 @@
+.menu-item{
+    width:370px;
+    display: flex;
+    flex-flow: row wrap;
+  margin:2px;
+  color: black;
+  background-color: rgb(243, 243, 243);
+  border:1px solid rgb(121, 29, 29);
+  box-shadow:0 3px 3px rgb(19, 18, 18);
+  padding:16px;
+  text-align: center
+}
+
+.menu-item:hover{
+    width:371px;
+  margin:2px;
+  color: black;
+  background-color: rgb(219, 219, 219);
+ 
+}
+.add-button{
+    border: 1px solid transparent;
+    border-radius: 50%;
+    line-height: 1.42857143; 
+    text-align: center;
+    vertical-align: middle;
+    width: 28px;
+    height: 28px;
+    background-size: cover!important;
+    background: url(../../img/addred.png) no-repeat;
+    cursor: pointer;
+}
+
+.add-button:hover{
+    border: 1px solid transparent;
+    border-radius: 50%;
+    line-height: 1.42857143; 
+    text-align: center;
+    vertical-align: middle;
+    width: 28px;
+    height: 28px;
+    background-size: cover!important;
+    background: url(../../img/add.png) no-repeat;
+    cursor: pointer;
+}
+
+.item-img{
+    
+  justify-content: flex-start;
+   /* flex-wrap: wrap;
+   flex-direction: row;
+  align-items: flex-start;  */
+}
+.item-desc{
+    
+ 
+   flex: 2;
+
+}
+
+.sub-button{
+    border: 1px solid transparent;
+    border-radius: 50%;
+    line-height: 1.42857143; 
+    text-align: center;
+    vertical-align: middle;
+    width: 28px;
+    height: 28px;
+    background-size: cover!important;
+    background: url(../../img/removegreen.png) no-repeat;
+    cursor: pointer;
+}
+
+
+.sub-button:hover{
+    border: 1px solid transparent;
+    border-radius: 50%;
+    line-height: 1.42857143; 
+    text-align: center;
+    vertical-align: middle;
+    width: 28px;
+    height: 28px;
+    background-size: cover!important;
+    background: url(../../img/remove.png) no-repeat;
+    cursor: pointer;
+}
