@@ -1,6 +1,9 @@
 
 /*------------------*/
+html{
+  background-color: rgb(90, 89, 89);
 
+}
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +11,8 @@
   font-family: "Times New Roman", Times, serif;
 }
 
-
+.container{
+}
 .links {
   border: 1px solid transparent;  
   display: flex;
@@ -74,15 +78,7 @@
 
 } 
 
-/* 
-.list-grid {
-  width: 100%;
-   align-items: flex-start;
-  justify-content: center;
-  display: flex;
-  flex-flow: row wrap;
 
-} */
 
 .list-grid-item {
   border: 1px solid transparent;
@@ -99,7 +95,7 @@
   border:1px solid rgb(121, 29, 29);
   box-shadow:0 3px 3px rgb(19, 18, 18);
   padding:16px;
-  /* text-align: center */
+ 
 }
 
 .total-price , .title1{
@@ -118,6 +114,7 @@
 .footer {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
   
 }
 
@@ -132,13 +129,7 @@
   flex: 2;
   padding: 20px;
 }
-.footer-three {
- 
-  height: auto;
-  margin: 30px;
-  background: url(./img/socialMedia.png) no-repeat;
 
-}
 
 .who-we-are{
   margin: 20px;

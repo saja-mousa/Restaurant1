@@ -125,7 +125,7 @@ class App extends Component {
      
       
   return (
-    <div>
+    <div className="container">
          <div className='menu-container1'>
 
             <div className='header-container'>
@@ -147,7 +147,7 @@ class App extends Component {
                       <div className="Add-Item1" >
                           <button className="post-button"  >
                               <NavLink onClick={this.openModal.bind(this)} to="/AddItem/" exact
-                                  activeClassName="my-active"> Add Item </NavLink>
+                                  > Add Item </NavLink>
                           </button>
                           <Popup
                               open={this.state.open}
@@ -223,7 +223,7 @@ class App extends Component {
               <div>
               </div>
 
-              <div className='footer-item footer-three'> </div>
+              
           </div>
 
 
