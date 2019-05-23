@@ -130,7 +130,7 @@ class App extends Component {
 
             <div className='header-container'>
                 <div className='menu'>
-                 <div >Resturant</div>
+                 <div  className="rest">Resturant</div>
                       
                 </div>
                 <div className='header'>
