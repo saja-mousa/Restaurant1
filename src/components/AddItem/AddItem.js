@@ -19,7 +19,7 @@ class AddItem extends Component{
     }
   
     login = () => {
-        console.log(this.state.auth);
+       
         this.setState({ auth: true })
 
     }
@@ -49,7 +49,7 @@ class AddItem extends Component{
         let data = null;
         let myJsonString = null;
         data = {
-            "orderUserName": "saja",
+            
             "itemDesc": document.getElementById('ItemName').value,
             "itemPrice": parseInt(document.getElementById('ItemPrice').value),
             "itemImage" :'null'
@@ -57,8 +57,7 @@ class AddItem extends Component{
         }
 
         myJsonString = JSON.stringify(data);
-        console.log('myJsonString=============', myJsonString)
-        console.log('document.getElementById("ItemName").value===', document.getElementById('ItemName').value)
+        
         axios.post('http://94.127.209.194:3333/AudioGramServices/webapi/myresource/postmenu', data)
             .then(response => {
                 console.log('response', response)
@@ -81,15 +80,15 @@ class AddItem extends Component{
 
 
     render(){
-        let div1=null;
+        let div1=null;  
       
         if(this.state.auth){
             div1= <form onSubmit={this.addItem}>
                <div className="add-div" > 
             <div className="item-desc1">
             <p> Add Item : </p> <br></br>
-             <input type="text" className="Input" id="ItemName" placeholder="Item Name .." ></input> <br/>
-             <input type="text" className="Input" id="ItemPrice"  placeholder="Item price .." ></input>
+             <input type="text" className="Input" id="ItemName" placeholder="Item Name .." required></input> <br/>
+             <input type="text" className="Input" id="ItemPrice"  placeholder="Item price .." required></input>
              
          </div>
  

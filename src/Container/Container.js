@@ -149,6 +149,7 @@ class App extends Component {
                               <NavLink onClick={this.openModal.bind(this)} to="/AddItem/" exact
                                   > Add Item </NavLink>
                           </button>
+                          
                           <Popup
                               open={this.state.open}
                               closeOnDocumentClick
