@@ -11,8 +11,7 @@ html{
   font-family: "Times New Roman", Times, serif;
 }
 
-.container{
-}
+
 .links {
   border: 1px solid transparent;  
   display: flex;
@@ -115,7 +114,7 @@ html{
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   
 }
 

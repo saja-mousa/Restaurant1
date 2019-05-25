@@ -52,7 +52,7 @@ class AddItem extends Component{
             
             "itemDesc": document.getElementById('ItemName').value,
             "itemPrice": parseInt(document.getElementById('ItemPrice').value),
-            "itemImage" :'null'
+            "itemImage" :document.getElementById('ItemImage').value
             // "https://media-cdn.tripadvisor.com/media/photo-s/12/78/67/51/ensalada-de-frutas-frescas.jpg"
         }
 
@@ -88,7 +88,8 @@ class AddItem extends Component{
             <div className="item-desc1">
             <p> Add Item : </p> <br></br>
              <input type="text" className="Input" id="ItemName" placeholder="Item Name .." required></input> <br/>
-             <input type="text" className="Input" id="ItemPrice"  placeholder="Item price .." required></input>
+             <input type="text" className="Input" id="ItemPrice"  placeholder="Item price .." required></input> <br/>
+             <input type="text" className="Input" id="ItemImage" placeholder="URL for Item Image .." required></input>
              
          </div>
  
@@ -103,8 +104,8 @@ class AddItem extends Component{
             div1 = <div className="add-div" >
                 <div className="item-desc1"> 
                     <p> you must login to add item </p> <br/>
-                   <input type="text" className="Input" id="userName" placeholder="user name .." onChange={(event) => this.userNAmeChangedHandler(event)}></input> <br/>
-                   <input type="text" className="Input" id="password" placeholder="password .." onChange={(event) => this.passwordChangedHandler(event)}></input>
+                   <input type="text" className="Input" id="userName" placeholder="user name .." required onChange={(event) => this.userNAmeChangedHandler(event)} ></input> <br/>
+                   <input type="text" className="Input" id="password" placeholder="password .." onChange={(event) => this.passwordChangedHandler(event)} required></input>
 
                 </div>
             
@@ -112,7 +113,6 @@ class AddItem extends Component{
                    
                     <AddButton 
                     Click={this.login} 
-                    confirmMsg={this.confirmMsg}
                     userNameISValid={this.state.userNameISValid} 
                     passwordISValid={this.state.passwordISValid}/> 
                 </div>
@@ -125,17 +125,6 @@ class AddItem extends Component{
         <div className="menu-item">
             { div1}
        
-{/*        
-        <div className="item-desc">
-           <input type="text" placeholder="Item Name .."></input> <br></br>
-           <input type="text"  placeholder="Item price .."></input>
-            
-        </div>
-
-        <div className="button-add">
-                <button className="add-button"></button>
-            </div> */}
-
     </div>
 
              );

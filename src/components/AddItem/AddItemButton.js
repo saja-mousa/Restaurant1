@@ -14,7 +14,7 @@ const AddItemButton=(props)=>{
         return (
             <div>
             <p id="msg"> please enter your<br/> name and password </p> <br/>
-            <button onClick={props.confirmMsg} className="lock-login" > </button>
+            <button  className="lock-login" > </button>
             </div>
         )
     }

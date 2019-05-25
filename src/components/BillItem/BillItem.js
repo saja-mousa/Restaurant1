@@ -3,7 +3,7 @@ import '../MenuItem/MenuItem.css'
 
 
 const Bill=(props)=>{
-  
+  console.log('props',props)
    let img=null
     if (props.image === 'null') {
         img = <img src={require('../../img/item1.png')} width="80px" height="50px" alt="boohoo" className="img-responsive" />
